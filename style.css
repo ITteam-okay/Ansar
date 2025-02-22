@@ -1,0 +1,182 @@
+:root {
+    --main-color: #078b00;
+    --secondary-color:#f9f9f9;
+    --text-color: #2c2c2c;
+    --hover-color: #45a049;
+    --accent-color: #ff9900;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: var(--secondary-color);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+header {
+    background: var(--main-color);
+    color: white;
+    padding: 2rem 0;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 2.5rem;
+}
+
+header p {
+    font-size: 1.2rem;
+}
+
+.image-navigation {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap; /* Чтобы не выходило за экран */
+    gap: 15px;
+    background: #f5f5f5;
+    padding: 10px 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.image-navigation a img {
+    width: 45px;
+    height: 45px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 2px solid #ddd;
+    padding: 5px;
+    background-color: white;
+    transition: transform 0.3s, filter 0.3s;
+}
+
+.hero {
+    position: relative;
+    min-height: 50vh; /* Используем min-height вместо height */
+    background: url('https://avatars.mds.yandex.net/i?id=3494658ed73634b751028d64038c41ae_l-9850860-images-thumbs&n=13') no-repeat center center/cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 2rem;
+}
+
+.hero h2 {
+    font-size: 2rem;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.container {
+    max-width: 1200px;
+    width: 90%;
+    margin: 2rem auto;
+    padding: 1rem;
+}
+
+.card-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+
+.card {
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.card img {
+    width: 100%;
+    height: 250px; /* Делаем высоту меньше */
+    object-fit: cover;
+}
+
+footer {
+    text-align: center;
+    background: var(--main-color);
+    color: white;
+    padding: 1.5rem 0;
+}
+
+/* Исправленный стиль для изображений */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+/* Адаптивные стили */
+@media (max-width: 1024px) {
+    header h1 {
+        font-size: 2rem;
+    }
+
+    .hero {
+        min-height: 40vh;
+    }
+
+    .hero h2 {
+        font-size: 1.8rem;
+    }
+}
+
+@media (max-width: 768px) {
+    body {
+        font-size: 14px;
+    }
+
+    .container {
+        width: 95%;
+    }
+
+    .hero {
+        min-height: 35vh;
+    }
+
+    .hero h2 {
+        font-size: 1.5rem;
+    }
+
+    .card-container {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+}
+
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 1.8rem;
+    }
+
+    .hero {
+        min-height: 30vh;
+        padding: 1rem;
+    }
+
+    .hero h2 {
+        font-size: 1.2rem;
+    }
+
+    .card-container {
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    }
+}
+.logo {
+    width: 80px; /* Задаем ширину */
+    height: auto; /* Автоматическая высота, чтобы сохранить пропорции */
+    object-fit: contain; /* Предотвращаем растягивание */
+}
